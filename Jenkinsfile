@@ -11,7 +11,9 @@ pipeline{
       }
       stage('pmd'){
         steps{
-          sh 'mvn pmd:pmd'
+            sh 'mvn pmd:pmd'
+            sh 'mvn test --fail-never'
+            sh 'mvn javadoc:jar --fail-never'
         }
     }
   }
