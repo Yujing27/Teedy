@@ -13,10 +13,10 @@ pipeline{
 
     stage('Build Docker Image') {
       steps {
-          script {
-              // 构建 Docker 镜像
-             sh 'docker build -t teedy2024_manual .'
-          }
+            script {
+                // 构建 Docker 镜像
+                docker.build('teedy2024_manual')
+            }
       }
     }
 
