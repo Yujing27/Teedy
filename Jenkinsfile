@@ -32,13 +32,9 @@ pipeline{
     stage('Run containers') {
             steps {
                 script {
-                    // Pull Docker image from Docker Hub
-                    docker.image('eedy2024_manual').pull()
-                    
-                    // Run Docker containers
-                    docker.run('docker run -d -p 8084:8080 --name teedy_manual01 teedy2024_manual')
-                    docker.run('docker run -d -p 8082:8080 --name teedy_manual02 teedy2024_manual')
-                    docker.run('docker run -d -p 8083:8080 --name teedy_manual03 teedy2024_manual')
+                  sh 'docker run -d -p 8084:8080 --name teedy_manual01 teedy2024_manual'
+                  sh 'docker run -d -p 8082:8080 --name teedy_manual02 teedy2024_manual'
+                  sh 'docker run -d -p 8083:8080 --name teedy_manual03 teedy2024_manual'
                 }
             }
     }
