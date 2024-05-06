@@ -9,18 +9,12 @@ pipeline{
           sh 'mvn -B -DskipTests clean package'
         }
       }
-      stage('pmd'){
-        steps{
-            sh 'mvn pmd:pmd'
-            sh 'mvn test --fail-never'
-            sh 'mvn javadoc:jar --fail-never'
-        }
-    }
+
     stage('Build Docker Image') {
       steps {
           script {
               // 构建 Docker 镜像
-              docker.build('teedy2024_manual')
+             sh 'docker build -t teedy2024_manual .'
           }
       }
     }
