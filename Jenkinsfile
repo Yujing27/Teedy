@@ -15,7 +15,7 @@ pipeline{
       steps {
             script {
                 // 构建 Docker 镜像
-                docker.build('teedy2024_manual')
+                sh 'docker build teedy2024_manual .'
             }
       }
     }
