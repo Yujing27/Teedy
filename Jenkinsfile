@@ -15,7 +15,7 @@ pipeline{
       steps {
             script {
                 // 构建 Docker 镜像
-                sh 'docker build teedy2024_manual .'
+                bat 'docker build teedy2024_manual .'
             }
       }
     }
@@ -41,7 +41,6 @@ pipeline{
     }
     
   }
-
 
 
   post{
