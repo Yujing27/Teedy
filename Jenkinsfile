@@ -2,6 +2,7 @@ pipeline{
     agent any
     tools { 
         maven 'MAVEN_HOME' 
+        docker 'docker'
 
       }
     stages {
@@ -15,7 +16,7 @@ pipeline{
       steps {
             script {
                 // 构建 Docker 镜像
-                bat 'docker build teedy2024_manual .'
+                sh 'docker build teedy2024_manual .'
             }
       }
     }
